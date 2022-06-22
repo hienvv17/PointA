@@ -1,0 +1,110 @@
+{
+  "categories": [
+    {"id": 1, "name": "Váy"},
+    {"id": 2, "name": "Giày cao gót"},
+    {"id": 3, "name": "Nón"},
+    {"id": 4, "name": "Kính"},
+    {"id": 5, "name": "Áo thun"},
+    {"id": 6, "name": "Áo sơ mi"}
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Váy công sở",
+      "img": "https://product.hstatic.net/200000182297/product/81_31246b7460084131a7a36c0b7701393f_master.jpg",
+      "price": 159000,
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "Váy dây phối hoa",
+      "img": "https://product.hstatic.net/200000182297/product/143_01d45cd1bd674e6fb3ff9afbb76d6442_master.jpg",
+      "price": 759000,
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "Đầm hoa",
+      "img": "https://yishop.com.vn/wp-content/uploads/2022/05/51.3-555x710.jpg",
+      "price": 599000,
+      "category": 1
+    },
+    {
+      "id": 4,
+      "name": "Váy voan hoa nhí",
+      "img": "https://yishop.com.vn/wp-content/uploads/2022/05/49.6-555x710.jpg",
+      "price": 530000,
+      "category": 1
+    },
+    {
+      "id": 5,
+      "name": "GOLD METALLIC ",
+      "img": "https://www.vascara.com/uploads/cms_productmedia/2022/May/17/bmn-0527-blk--1-__63855__1652781163-medium@2x.jpg",
+      "price": 584000,
+      "category": 2
+    },
+    {
+      "id": 6,
+      "name": "GIÀY SANDAL MŨI VUÔNG",
+      "img": "https://www.vascara.com/uploads/cms_productmedia/2022/May/9/sdn-0712-blk--2-__63674__1652066423-medium@2x.jpg",
+      "price": 584000,
+      "category": 2
+    },
+    {
+      "id": 7,
+      "name": "Diamond Adjustable",
+      "img": "https://product.hstatic.net/1000284478/product/07c_32cp85111_4_86ca8e7995694ed79b8a8e00dc7d6e62_master.jpg",
+      "price": 1200000,
+      "category": 3
+    },
+    {
+      "id": 8,
+      "name": "Bucket hat",
+      "img": "https://product.hstatic.net/1000284478/product/50gns_3aht0392n_1_7858fc0521874d049145c6fbb6b2c3b5_master.jpg",
+      "price": 584000,
+      "category": 3
+    },
+    {
+      "id": 9,
+      "name": "GivenChy J5G",
+      "img": "https://product.hstatic.net/200000525711/product/gv0030_j5g__56-16-145_tem7300_6efed462039d458b872d15bb7032690a_73a44f7e15954084a5fee1e7aef3fc76_large.jpg",
+      "price": 3084000,
+      "category": 4
+    },
+    {
+      "id": 10,
+      "name": "Givenchy 7G1",
+      "img": "https://product.hstatic.net/200000525711/product/gv0034_7g1__53-16-140_tem11200_89291591b73e4e64a9262a94f625cbaf_e68cc2c1b9cf423f813a0663ac80e065_large.jpg",
+      "price": 1584000,
+      "category": 4
+    },
+    {
+      "id": 11,
+      "name": "Polo croptop",
+      "img": "https://bizweb.sapocdn.net/100/438/408/files/ao-polo-nu-vai-pique-mat-chim-yodyvn-1.jpg?v=1654754184965",
+      "price": 269000,
+      "category": 5
+    },
+    {
+      "id": 12,
+      "name": "Polo pique",
+      "img": "https://bizweb.sapocdn.net/100/438/408/products/apn3340-tra.png?v=1652670019900",
+      "price": 584000,
+      "category": 5
+    },
+    {
+      "id": 13,
+      "name": "WHITE ANT",
+      "img": "https://product.hstatic.net/1000210298/product/26__1___medium__f72cf969b469444cb90d0adeab96f390.jpg",
+      "price": 984000,
+      "category": 6
+    },
+    {
+      "id": 14,
+      "name": "STITCHING SHIRT ",
+      "img": "https://product.hstatic.net/1000210298/product/29__1___medium__7f17da7acba24fd3b82aad5c5354b768.jpg",
+      "price": 700000,
+      "category": 6
+    }
+  ]
+}
