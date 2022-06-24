@@ -6,9 +6,13 @@ import Activity from './src/screens/activity/Activity.js';
 import Home from './src/screens/home/Home';
 import MyCalendar from './src/screens/mycalendar/MyCalendar';
 import Personal from './src/screens/personal/Personal';
+import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Image} from 'react-native';
 import homeicon from './assets/images/homeicon.png';
+import activityicon from './assets/images/activityicon.png';
+import calendaricon from './assets/images/calendaricon.png';
+import usericon from './assets/images/usericon.png';
 
 const HomeStack = createNativeStackNavigator();
 const MyCalendarStack = createNativeStackNavigator();
@@ -62,38 +66,51 @@ function PersonalStackScreen() {
   );
 }
 
+//** tạm thời style để check hiển thị. sau khi bố cục rõ ràng  */
 export default class AppNavigator extends React.Component {
   render() {
     return (
       <NavigationContainer>
         <FooterTab.Navigator
-          screenOptions={{
-            headerShown: false,
-            FooterTabBarActiveTintColor: 'tomato',
-            FooterTabBarInactiveTintColor: 'gray',
-            tabBarStyle: {
-              backgroundColor: 'powderblue',
-              height: '10%',
+          screenOptions={({route}) => ({
+            tabBarIcon: ({focused}) => {
+              let iconname = homeicon;
+              if (route.name == 'Home') {
+                iconname = homeicon;
+              } else if (route.name == 'Activity') {
+                iconname = activityicon;
+              } else if (route.name == 'MyCalendar') {
+                iconname = calendaricon;
+              } else {
+                iconname = usericon;
+              }
+              return (
+                <View>
+                  <Image
+                    source={iconname}
+                    style={{
+                      height: '75%',
+                      aspectRatio: 1,
+                      tintColor: focused ? '#e32f45' : '#748c94',
+                    }}
+                  />
+                </View>
+              );
             },
-            tabBarInactiveTintColor: 'black',
-          }}>
-          <FooterTab.Screen
-            name="Home"
-            component={HomeStackScreen}
-            options={{
-              tabBarLabel: 'Trang chủ',
-              tabBarActiveTintColor: 'tomato',
-              tabBarInactiveTintColor: 'gray',
-              tabBarIcon: () => {
-                return <Ionicons name="md-lock-closed" size={30} />;
-              },
-              tabBarBadge: 3,
-            }}
-          />
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'gray',
+            headerShown: false,
+          })}>
+          <FooterTab.Screen name="Home" component={HomeStackScreen} />
           <FooterTab.Screen
             name="Activity"
             component={ActivityStackScreen}
-            options={{tabBarLabel: 'Hoạt động'}}
+            options={{
+              tabBarLabel: 'Hoạt động',
+              // tabBarIcon: ({color, size}) => (
+              //   <Ionicons name="home" color={color} size={size} />
+              // ),
+            }}
           />
           <FooterTab.Screen
             name="MyCalendar"

@@ -1,21 +1,50 @@
 import React from 'react';
-import {View, Text, Image, ImageBackground} from 'react-native';
-import Logo from '../../../assets/images/logo.png';
-import TestImg from '../../../assets/images/TestImg.jpg';
+import {View, Text, Image, Button, TouchableOpacity} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
+import Card from '../Card';
 
 export default function Trend() {
   return (
-    <View style={{flex: 2.5}}>
-      <ImageBackground
-        source={TestImg}
-        resizeMode="cover"
-        style={{flex: 1, justifyContent: 'center'}}>
-        <Text>this is for Trend event area</Text>
-      </ImageBackground>
-      <View style={{flexDirection: 'row'}}>
-        <Text style={{flex: 4}}> Xu hướng</Text>
-        <Text style={{flex: 2}}> Xem tất cả</Text>
+    <View style={{flex: 4, borderWidth: 2, paddingHorizontal: 10}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingBottom: 10,
+          flex: 0.2,
+        }}>
+        <Text style={{fontWeight: '500', fontSize: 15}}> Tích điểm</Text>
+        <TouchableOpacity>
+          <Text> Xem tất cả</Text>
+        </TouchableOpacity>
       </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          flex: 0.2,
+        }}>
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+      </View>
+
+      {/* <ScrollView  contentContainerStyle={{flex: 0.2}}>
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+        <Button title="Tất cả" />
+      </ScrollView> */}
+
+      <ScrollView horizontal={true}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </ScrollView>
     </View>
   );
 }

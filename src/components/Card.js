@@ -5,8 +5,18 @@ import TestImg from '../../assets/images/TestImg.jpg';
 
 export default function Card() {
   return (
-    <View style={{flex: 1}}>
-      <ImageBackground source={TestImg} style={{flex: 2}}>
+    <View
+      style={{
+        flex: 1,
+        borderRadius: 20,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        backgroundColor: '#f5f5dc',
+        overflow: 'hidden',
+      }}>
+      <ImageBackground
+        source={TestImg}
+        style={{flex: 2, justifyContent: 'center'}}>
         <Text> this is area for event background</Text>
       </ImageBackground>
       <View style={{flex: 1}}>

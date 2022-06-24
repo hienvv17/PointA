@@ -12,6 +12,7 @@
     "devtools": "react-devtools"
   },
   "dependencies": {
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",

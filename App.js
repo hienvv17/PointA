@@ -14,8 +14,3 @@ import AppNavigator from './AppNavigator.js';
 export default function App() {
   return <AppNavigator />;
 }
-const styles = StyleSheet.create({
-  container: {
-    color: 'red',
-  },
-});

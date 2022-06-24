@@ -8,7 +8,7 @@ const Styles = StyleSheet.create({
   headerImage: {
     height: '70%',
     aspectRatio: 1 / 1,
-    borderRadius: 100,
+    borderRadius: 100000,
   },
   headerText: {
     fontSize: 25,

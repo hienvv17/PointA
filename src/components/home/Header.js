@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import {Icon} from 'react-native-vector-icons/Icon';
-import Logo from '../../../assets/images/logo.png';
 import TestImg from '../../../assets/images/TestImg.jpg';
 import Styles from '../../styles/Styles';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 function LogoImage() {
   return (
@@ -13,7 +12,7 @@ function LogoImage() {
 }
 export default function HeaderBar() {
   return (
-    <View style={[Styles.headerContainer, {flex: 1}]}>
+    <View style={[Styles.headerContainer, {flex: 0.5}]}>
       <View
         style={{
           flex: 1,
@@ -24,12 +23,12 @@ export default function HeaderBar() {
             flex: 0.75,
             alignItems: 'center',
             justifyContent: 'center',
-            paddingHorizontal: 8,
+            paddingHorizontal: 6,
           }}>
           <LogoImage />
         </View>
         <View
-          style={{flex: 1.25, justifyContent: 'center', paddingHorizontal: 8}}>
+          style={{flex: 1.25, justifyContent: 'center', paddingHorizontal: 6}}>
           <Text style={Styles.headerText}>A Point</Text>
         </View>
       </View>
@@ -39,9 +38,10 @@ export default function HeaderBar() {
           flexDirection: 'row',
           justifyContent: 'flex-end',
           alignItems: 'center',
+          paddingHorizontal: 8,
         }}>
-        <Ionicons name="md-search" size={24} color={'#3280F0'} />
-        <Text>button2 </Text>
+        <MaterialCommunityIcons name="bell-badge" size={24} color={'#3280F0'} />
+        <Octicons name="star" size={24} color={'#3280F0'} />
       </View>
     </View>
   );
