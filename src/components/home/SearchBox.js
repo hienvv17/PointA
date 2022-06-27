@@ -1,28 +1,16 @@
 import React from 'react';
 import {View, Text, TextInput} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Styles from '../../styles/Styles';
 
 export default function SearchBox() {
   return (
-    <View
-      style={{
-        flex: 0.5,
-        flexDirection: 'row',
-        borderWidth: 2,
-        borderColor: 'red',
-      }}>
-      <View
-        style={{
-          flex: 7,
-          borderWidth: 2,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
+    <View style={Styles.searchBoxContainer}>
+      <View style={Styles.searchBox}>
         <TextInput placeholder="This is input box for search value" />
         <AntDesign name="search1" size={20} color={'#3280F0'} />
       </View>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={Styles.filter}>
         <AntDesign name="filter" size={20} color={'#3280F0'} />
       </View>
     </View>

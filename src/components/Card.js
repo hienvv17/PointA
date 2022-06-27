@@ -10,9 +10,9 @@ export default function Card() {
         flex: 1,
         borderRadius: 20,
         marginHorizontal: 10,
-        marginVertical: 10,
         backgroundColor: '#f5f5dc',
         overflow: 'hidden',
+        flexDirection: 'column',
       }}>
       <ImageBackground
         source={TestImg}

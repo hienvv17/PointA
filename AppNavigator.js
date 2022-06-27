@@ -6,9 +6,7 @@ import Activity from './src/screens/activity/Activity.js';
 import Home from './src/screens/home/Home';
 import MyCalendar from './src/screens/mycalendar/MyCalendar';
 import Personal from './src/screens/personal/Personal';
-import Feather from 'react-native-vector-icons/Feather';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {View, Image} from 'react-native';
+import {View, Image, Text, Dimensions} from 'react-native';
 import homeicon from './assets/images/homeicon.png';
 import activityicon from './assets/images/activityicon.png';
 import calendaricon from './assets/images/calendaricon.png';
@@ -75,54 +73,54 @@ export default class AppNavigator extends React.Component {
           screenOptions={({route}) => ({
             tabBarIcon: ({focused}) => {
               let iconname = homeicon;
+              let label = 'Trang chủ';
               if (route.name == 'Home') {
                 iconname = homeicon;
               } else if (route.name == 'Activity') {
                 iconname = activityicon;
+                label = 'Hoạt động';
               } else if (route.name == 'MyCalendar') {
                 iconname = calendaricon;
+                label = 'Lịch của tôi';
               } else {
                 iconname = usericon;
+                label = 'Cá nhân';
               }
               return (
-                <View>
+                <View
+                  style={{
+                    padding: 0,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
                   <Image
                     source={iconname}
                     style={{
-                      height: '75%',
+                      resizeMode: 'contain',
+                      height: '50%',
                       aspectRatio: 1,
                       tintColor: focused ? '#e32f45' : '#748c94',
+                      padding: 10,
+                      marginBottom: 10,
                     }}
                   />
+                  <Text style={{fontSize: 10, fontWeight: '600'}}>{label}</Text>
                 </View>
               );
             },
             tabBarActiveTintColor: 'red',
             tabBarInactiveTintColor: 'gray',
             headerShown: false,
+            tabBarStyle: {height: '10%'},
+            tabBarShowLabel: false,
           })}>
           <FooterTab.Screen name="Home" component={HomeStackScreen} />
-          <FooterTab.Screen
-            name="Activity"
-            component={ActivityStackScreen}
-            options={{
-              tabBarLabel: 'Hoạt động',
-              // tabBarIcon: ({color, size}) => (
-              //   <Ionicons name="home" color={color} size={size} />
-              // ),
-            }}
-          />
+          <FooterTab.Screen name="Activity" component={ActivityStackScreen} />
           <FooterTab.Screen
             name="MyCalendar"
             component={MyCalendarStackScreen}
-            options={{tabBarLabel: 'Lịch của tôi'}}
           />
-
-          <FooterTab.Screen
-            name="Personal"
-            component={PersonalStackScreen}
-            options={{tabBarLabel: 'Cá nhân'}}
-          />
+          <FooterTab.Screen name="Personal" component={PersonalStackScreen} />
         </FooterTab.Navigator>
       </NavigationContainer>
     );

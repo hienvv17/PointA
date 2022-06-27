@@ -9,17 +9,12 @@ import {
 } from 'react-native';
 import Logo from '../../../assets/images/logo.png';
 import TestImg from '../../../assets/images/TestImg.jpg';
+import Styles from '../../styles/Styles';
 
 export default function Event() {
   return (
-    <View style={{flex: 2, paddingVertical: 10, marginHorizontal: 10}}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingBottom: 10,
-        }}>
+    <View style={Styles.eventContainer}>
+      <View style={Styles.allEventButton}>
         <Text style={{fontWeight: '500', fontSize: 15}}> Tích điểm</Text>
         <TouchableOpacity>
           <Text> Xem tất cả</Text>
@@ -28,14 +23,7 @@ export default function Event() {
       <ImageBackground
         source={TestImg}
         resizeMode="cover"
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          borderRadius: 25,
-          resizeMode: 'cover',
-          overflow: 'hidden',
-        }}>
+        style={Styles.eventCoverImage}>
         <Text style={{fontSize: 25, fontWeight: 'bold', color: 'white'}}>
           SỨC HÚT TỪ SÂN CỎ
         </Text>
