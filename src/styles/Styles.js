@@ -1,52 +1,59 @@
 import {StyleSheet, Dimensions} from 'react-native';
 const screenHight = Dimensions.get('window');
 const screenWidth = Dimensions.get('window');
-const headerHight = screenHight / 10,
-  searchboxHight = screenHight / 10,
-  trendHight = (screenHight / 10) * 5,
-  eventHight = (screenHight / 10) * 3;
-
-console.log(screenWidth, screenHight);
+// console.log(screenHight, screenWidth);
 const Styles = StyleSheet.create({
-  container: {flex: 1, paddingHorizontal: 5},
+  container: {
+    flex: 1,
+    paddingHorizontal: '2%',
+    backgroundColor: '#ffffff',
+    overflow: 'hidden',
+    paddingTop: 10,
+  },
 
   /**Home page header style */
-  headericon: {
-    backgroundColor: 'yellow',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-  },
-  iconContainer: {
-    borderWidth: 1,
+  headerContainer: {
     flex: 0.5,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    paddingLeft: 0,
   },
-  headerContainer: {
-    borderWidth: 2,
+  headerIconContainer: {
+    flex: 0.5,
     flexDirection: 'row',
-  },
-  headerImage: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    // borderWidth: 1,
     height: '100%',
-    aspectRatio: 1 / 1,
-    borderRadius: 0,
   },
-  imageContainer: {
-    borderWidth: 1,
+  iconBox: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '90%',
+    overflow: 'hidden',
+    //borderWidth: 1,
+    backgroundColor: '#EBF2E6',
+    borderRadius: 10,
+    marginLeft: 15,
+  },
+
+  headerImageContainer: {
+    flex: 1,
+    //borderWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    height: '100%',
+  },
+  headerImage: {
+    height: 10,
+    aspectRatio: 1 / 1,
+    //borderRadius: 0,
   },
   headerText: {
     fontSize: 26,
     fontWeight: 'bold',
     color: '#78A66D',
-    paddingHorizontal: 10,
+    marginLeft: '10%',
   },
   /** ---------------- */
 
@@ -54,24 +61,52 @@ const Styles = StyleSheet.create({
   searchBoxContainer: {
     flex: 0.5,
     flexDirection: 'row',
-    borderWidth: 2,
-    borderColor: 'red',
+    //borderColor: 'red',
+    // borderWidth: 1,
+    alignItems: 'center',
+    marginVertical: 5,
   },
   searchBox: {
-    flex: 7,
-    borderWidth: 2,
+    width: '83.3%',
+    backgroundColor: '#F4F6F9',
+    borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    shadowColor: '',
   },
-  filter: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  filter: {
+    width: '16.7%',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    height: '100%',
+    //borderWidth: 1,
+    overflow: 'hidden',
+    paddingLeft: 15,
+  },
 
   /** ---------------- */
 
+  /**Homepage trend */
+
+  trendContainer: {
+    flex: 3.8,
+    borderWidth: 1,
+  },
+  allTrendButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flex: 0.2,
+  },
+  trendlist: {
+    flat: 0.2,
+  },
+  /** ---------------- */
   /**Homepage Event */
 
   eventContainer: {
-    flex: 2,
+    flex: 2.2,
     borderWidth: 2,
   },
   allEventButton: {
@@ -88,23 +123,6 @@ const Styles = StyleSheet.create({
     overflow: 'hidden',
   },
 
-  /** ---------------- */
-
-  /**Homepage trend */
-
-  trendContainer: {
-    flex: 4,
-    borderWidth: 1,
-  },
-  allTrendButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 0.2,
-  },
-  trendlist: {
-    flat: 0.2,
-  },
   /** ---------------- */
 });
 export default Styles;

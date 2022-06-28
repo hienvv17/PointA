@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, Alert} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Styles from '../../styles/Styles';
 import Card from '../Card';
