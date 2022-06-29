@@ -2,15 +2,19 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import Activity from './src/screens/activity/Activity.js';
-import Home from './src/screens/home/Home';
-import MyCalendar from './src/screens/mycalendar/MyCalendar';
-import Personal from './src/screens/personal/Personal';
-import {View, Image, Text, Dimensions} from 'react-native';
-import homeicon from './assets/images/homeicon.png';
-import activityicon from './assets/images/activityicon.png';
-import calendaricon from './assets/images/calendaricon.png';
-import usericon from './assets/images/usericon.png';
+import Activities from '../screens/activities/Activities';
+import Home from '../screens/home/homeScreen';
+import MyCalendar from '../screens/mycalendar/MyCalendar';
+import Personal from '../screens/personal/Personal';
+import {View, Image, Text} from 'react-native';
+import activeHome from '../../assets/images/activeHome.png';
+import unactiveHome from '../../assets/images/unactiveHome.png';
+import activeActivity from '../../assets/images/activeActivity.png';
+import unactiveActivity from '../../assets/images/unactiveActivity.png';
+import activeUser from '../../assets/images/activeUser.png';
+import unactiveUser from '../../assets/images/unactiveUser.png';
+import activeCalendar from '../../assets/images/activeCalendar.png';
+import unactiveCalendar from '../../assets/images/unactiveCalendar.png';
 
 const HomeStack = createNativeStackNavigator();
 const MyCalendarStack = createNativeStackNavigator();
@@ -35,7 +39,7 @@ function ActivityStackScreen() {
     <ActivityStack.Navigator>
       <ActivityStack.Screen
         name="AwardScreen"
-        component={Activity}
+        component={Activities}
         options={{headerShown: false}}
       />
     </ActivityStack.Navigator>
@@ -72,18 +76,18 @@ export default class AppNavigator extends React.Component {
         <FooterTab.Navigator
           screenOptions={({route}) => ({
             tabBarIcon: ({focused}) => {
-              let iconname = homeicon;
+              let iconname = activeHome;
               let label = 'Trang chủ';
               if (route.name == 'Home') {
-                iconname = homeicon;
+                iconname = focused ? activeHome : unactiveHome;
               } else if (route.name == 'Activity') {
-                iconname = activityicon;
+                iconname = focused ? activeActivity : unactiveActivity;
                 label = 'Hoạt động';
               } else if (route.name == 'MyCalendar') {
-                iconname = calendaricon;
+                iconname = focused ? activeCalendar : unactiveCalendar;
                 label = 'Lịch của tôi';
               } else {
-                iconname = usericon;
+                iconname = focused ? activeUser : unactiveUser;
                 label = 'Cá nhân';
               }
               return (
@@ -99,23 +103,28 @@ export default class AppNavigator extends React.Component {
                       resizeMode: 'contain',
                       height: '50%',
                       aspectRatio: 1,
-                      tintColor: focused ? '#e32f45' : '#748c94',
+                      tintColor: '#8BC77D',
                       padding: 10,
                       marginBottom: 10,
                     }}
                   />
-                  <Text style={{fontSize: 10, fontWeight: '600'}}>{label}</Text>
+                  <Text
+                    style={{
+                      fontSize: 10,
+                      fontWeight: '600',
+                      color: '#8BC77D',
+                    }}>
+                    {label}
+                  </Text>
                 </View>
               );
             },
-            tabBarActiveTintColor: 'red',
-            tabBarInactiveTintColor: 'gray',
             headerShown: false,
             tabBarStyle: {height: '10%'},
             tabBarShowLabel: false,
           })}>
           <FooterTab.Screen name="Home" component={HomeStackScreen} />
-          <FooterTab.Screen name="Activity" component={ActivityStackScreen} />
+          <FooterTab.Screen name="Activities" component={ActivityStackScreen} />
           <FooterTab.Screen
             name="MyCalendar"
             component={MyCalendarStackScreen}

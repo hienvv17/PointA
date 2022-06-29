@@ -13,7 +13,6 @@ export default function Card() {
         overflow: 'hidden',
         flexDirection: 'column',
         marginRight: 15,
-        marginBottom: 5,
       }}>
       <ImageBackground
         source={TestImg}

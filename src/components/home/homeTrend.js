@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, TouchableOpacity, FlatList, Alert} from 'react-native';
+import React, {cloneElement} from 'react';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Styles from '../../styles/Styles';
 import Card from '../Card';
@@ -9,28 +9,31 @@ export default function Trend() {
   return (
     <View style={Styles.trendContainer}>
       <View style={Styles.allTrendButton}>
-        <Text style={{fontWeight: '500', fontSize: 15, borderWidth: 1}}>
-          Tích điểm
-        </Text>
+        <Text style={Styles.sectionTitle}>Xu hướng</Text>
         <TouchableOpacity>
-          <Text style={{borderWidth: 1}}> Xem tất cả</Text>
+          <Text style={Styles.showAllButton}>Xem tất cả</Text>
         </TouchableOpacity>
       </View>
-      <View style={Styles.trendlist}>
+      <View style={Styles.categoryList}>
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={item => item.id}
           horizontal={true}
+          showsHorizontalScrollIndicator={false}
         />
       </View>
-
-      <ScrollView horizontal={true}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </ScrollView>
+      <View style={Styles.trendList}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -64,11 +67,16 @@ const DATA = [
 const Item = ({title}) => (
   <View
     style={{
-      backgroundColor: 'powder blue',
-      borderWidth: 2,
-      paddingHorizontal: 20,
-      marginHorizontal: 10,
+      backgroundColor: '#7AC143',
+      borderWidth: 1,
+      paddingHorizontal: 15,
+      marginRight: 10,
+      borderRadius: 20,
+      justifyContent: 'center',
     }}>
-    <Text style={{fontWeight: 'bold'}}>{title}</Text>
+    <TouchableOpacity
+      style={{width: '100%', height: '100%', justifyContent: 'center'}}>
+      <Text style={{fontWeight: 'bold', color: '#ffffff'}}>{title}</Text>
+    </TouchableOpacity>
   </View>
 );

@@ -15,6 +15,7 @@ const Styles = StyleSheet.create({
   headerContainer: {
     flex: 0.5,
     flexDirection: 'row',
+    marginBottom: 5,
   },
   headerIconContainer: {
     flex: 0.5,
@@ -62,20 +63,22 @@ const Styles = StyleSheet.create({
     flex: 0.5,
     flexDirection: 'row',
     //borderColor: 'red',
-    // borderWidth: 1,
+    //borderWidth: 1,
     alignItems: 'center',
-    marginVertical: 5,
+    marginBottom: 5,
+    marginTop: 5,
   },
   searchBox: {
     width: '83.3%',
-    backgroundColor: '#F4F6F9',
-    borderRadius: 20,
+    height: '90%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: '#F4F6F9',
+    borderRadius: 20,
+    paddingHorizontal: 10,
     alignItems: 'center',
-    shadowColor: '',
   },
-  filter: {
+  filterBox: {
     width: '16.7%',
     justifyContent: 'center',
     alignItems: 'flex-end',
@@ -84,35 +87,39 @@ const Styles = StyleSheet.create({
     overflow: 'hidden',
     paddingLeft: 15,
   },
-
-  /** ---------------- */
-
-  /**Homepage trend */
-
-  trendContainer: {
-    flex: 3.8,
-    borderWidth: 1,
-  },
-  allTrendButton: {
-    flexDirection: 'row',
+  filter: {
+    height: '90%',
+    width: '100%',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 0.2,
+    //borderWidth: 1,
+    borderRadius: 10,
+    backgroundColor: '#EBF2E6',
   },
-  trendlist: {
-    flat: 0.2,
-  },
+
   /** ---------------- */
+  sectionTitle: {
+    fontWeight: '600',
+    fontSize: 16,
+    color: '#000000',
+    //borderWidth: 1,
+  },
+  showAllButton: {fontWeight: '500', fontSize: 12, color: '#7AC143'},
+
   /**Homepage Event */
 
   eventContainer: {
     flex: 2.2,
-    borderWidth: 2,
+    //borderWidth: 2,
+    marginTop: 5,
+    marginBottom: 5,
   },
   allEventButton: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+    paddingHorizontal: 5,
   },
   eventCoverImage: {
     flex: 1,
@@ -120,9 +127,44 @@ const Styles = StyleSheet.create({
     alignItems: 'flex-start',
     borderRadius: 25,
     resizeMode: 'cover',
+    paddingLeft: 20,
     overflow: 'hidden',
   },
+  eventTitle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'white',
+    paddingBottom: 20,
+  },
+  joinButton: {
+    backgroundColor: '#7AC143',
+    width: 125,
+    height: 34,
+    paddingHorizontal: 15,
+    justifyContent: 'center',
+    borderRadius: 20,
+  },
 
+  /** ---------------- */
+  /**Homepage trend */
+
+  trendContainer: {
+    flex: 3.8,
+    borderWidth: 1,
+    marginTop: 5,
+    marginBottom: 10,
+  },
+  allTrendButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 1,
+    //borderWidth: 1,
+  },
+  categoryList: {
+    flex: 1,
+  },
+  trendList: {flex: 8},
   /** ---------------- */
 });
 export default Styles;
